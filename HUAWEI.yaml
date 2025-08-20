@@ -1,0 +1,22 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+
+proxies:
+  - name: "华为-吉林"
+    type: http
+    server: jt4.2daili.com
+    port: 47890
+    username: ilnc0819um1000
+    password: 6t9BhAFg
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - "华为-吉林"
+
+rules:
+  - MATCH,Proxy
